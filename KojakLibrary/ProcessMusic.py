@@ -7,10 +7,12 @@ import time
 import codecs, json
 
 def load_midi(fn):
+    'Load MIDI file using Music21 library'
     my_midi = converter.parse(fn)
     return my_midi
 
 def create_grid(part):
+    'Create Numpy array representing note grid for MIDI part'
     all_notes = []
     for element in part.recurse():
         try:
@@ -35,6 +37,7 @@ def create_grid(part):
     return note_grid
 
 def get_track_grids(my_midi):
+    'Create dictionary of all track grids in MIDI file'
     parts = [p for p in my_midi.parts]
     track_grids = {}
     unnamed_counter = 1
@@ -63,6 +66,7 @@ def get_track_grids(my_midi):
     return track_grids
 
 def music_jsonify(midi_file):
+    'Convert MIDI file to JSON file, for use in matching algorithm'
     print('Loading ' + midi_file)
     my_midi = load_midi('midi_files/'+midi_file)
     
@@ -92,6 +96,7 @@ def music_jsonify(midi_file):
     json.dump(data_import, codecs.open(file_path, 'w', encoding='utf-8'), separators=(',', ':'), sort_keys=True, indent=4)
     
 def music_unjsonify(json_file):
+    'Load json music grids'
     print('Loading ' + json_file)
     my_midi = json.load(codecs.open('json_files/' + json_file, 'r', encoding='utf-8'))
     my_midi['instruments'] = {k: np.array(v) for k, v in my_midi['instruments'].items()}

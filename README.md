@@ -1,6 +1,11 @@
 # Jazzify
 ### An algorithm to analyze melodic frameworks and contour patterns to match instrumental accompaniment with solo performances.
 
+IPython Notebook Run Order:
+- 01_Scrape MIDI Data.ipynb
+- 02_Analyze MIDI.ipynb
+- 03_Recommend Chord Progressions.ipynb
+
 ### Algorithm Demo:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/zhinvzyDlWw/0.jpg)](https://www.youtube.com/watch?v=zhinvzyDlWw)
