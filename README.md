@@ -1,7 +1,7 @@
 # Jazzify
 ### An algorithm to analyze melodic frameworks and contour patterns to match instrumental accompaniment with solo performances.
 
-### Web Application Demo:
+### Algorithm Demo:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/zhinvzyDlWw/0.jpg)](https://www.youtube.com/watch?v=zhinvzyDlWw)
 
